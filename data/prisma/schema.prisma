@@ -1,0 +1,47 @@
+generator client {
+    provider     = "prisma-client"
+    output       = "../generated/prisma"
+    runtime      = "deno"
+    moduleFormat = "esm"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum DocumentType {
+    CPF
+    CNPJ
+}
+
+model Producer {
+    id           String       @id @default(uuid())
+    document     String       @unique
+    documentType DocumentType
+    name         String
+    farms        Farm[]
+    createdAt    DateTime     @default(now())
+    updatedAt    DateTime     @updatedAt
+}
+
+model Farm {
+    id             String   @id @default(uuid())
+    name           String
+    city           String
+    state          String
+    totalArea      Float
+    arableArea     Float
+    vegetationArea Float
+    producer       Producer @relation(fields: [producerId], references: [id])
+    producerId     String
+    crops          Crop[]
+}
+
+model Crop {
+    id      String @id @default(uuid())
+    name    String
+    harvest String // ex: "Safra 2021"
+    farm    Farm   @relation(fields: [farmId], references: [id])
+    farmId  String
+}
