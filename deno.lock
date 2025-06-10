@@ -7,6 +7,7 @@
     "npm:@nestjs/core@10.4.18": "10.4.18_@nestjs+common@10.4.18__reflect-metadata@0.2.2__rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2",
     "npm:@prisma/client@6.9.0": "6.9.0_prisma@6.9.0",
     "npm:@prisma/engines@6.9.0": "6.9.0",
+    "npm:prisma@*": "6.9.0",
     "npm:prisma@6.9.0": "6.9.0"
   },
   "jsr": {
