@@ -4,12 +4,16 @@
     "jsr:@std/assert@1": "1.0.13",
     "jsr:@std/dotenv@~0.225.5": "0.225.5",
     "jsr:@std/internal@^1.0.6": "1.0.6",
-    "npm:@nestjs/common@^10.4.19": "10.4.19_reflect-metadata@0.2.2_rxjs@7.8.2",
-    "npm:@nestjs/core@10.4.18": "10.4.18_@nestjs+common@10.4.18__reflect-metadata@0.2.2__rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2",
-    "npm:@nestjs/core@^10.4.19": "10.4.19_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@10.4.18____reflect-metadata@0.2.2____rxjs@7.8.2___reflect-metadata@0.2.2___rxjs@7.8.2___@nestjs+platform-express@10.4.19___@nestjs+common@10.4.19____reflect-metadata@0.2.2____rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.18___reflect-metadata@0.2.2___rxjs@7.8.2__reflect-metadata@0.2.2__rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@10.4.19____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2",
-    "npm:@nestjs/platform-express@^10.4.19": "10.4.19_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.18___reflect-metadata@0.2.2___rxjs@7.8.2__reflect-metadata@0.2.2__rxjs@7.8.2__@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2",
+    "npm:@nestjs/common@^11.1.3": "11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1",
+    "npm:@nestjs/config@^4.0.2": "4.0.2_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_rxjs@7.8.2_class-validator@0.14.2_class-transformer@0.5.1",
+    "npm:@nestjs/core@10.4.18": "10.4.18_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2_class-transformer@0.5.1",
+    "npm:@nestjs/core@^10.4.19": "10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-validator@0.14.2__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-transformer@0.5.1",
+    "npm:@nestjs/platform-express@^10.4.19": "10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1",
+    "npm:@nestjs/testing@^11.1.3": "11.1.3_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-validator@0.14.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1",
     "npm:@prisma/client@6.9.0": "6.9.0_prisma@6.9.0",
     "npm:@prisma/engines@6.9.0": "6.9.0",
+    "npm:class-transformer@~0.5.1": "0.5.1",
+    "npm:class-validator@~0.14.2": "0.14.2",
     "npm:prisma@*": "6.9.0",
     "npm:prisma@6.9.0": "6.9.0"
   },
@@ -31,48 +35,65 @@
     "@lukeed/csprng@1.1.0": {
       "integrity": "sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA=="
     },
-    "@nestjs/common@10.4.18_reflect-metadata@0.2.2_rxjs@7.8.2": {
-      "integrity": "sha512-9SrTth6YJJ9CjVnekw9WP8kaiwh+tSgR0KIrPYV/aWgF9D0175uDJUglzbiCfUbkPyHN8jcKXUXd3EVPDY6BNA==",
+    "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2": {
+      "integrity": "sha512-ogEK+GriWodIwCw6buQ1rpcH4Kx+G7YQ9EwuPySI3rS05pSdtQ++UhucjusSI9apNidv+QURBztJkRecwwJQXg==",
       "dependencies": [
+        "class-validator",
         "file-type",
         "iterare",
-        "reflect-metadata",
-        "rxjs",
-        "tslib",
-        "uid"
-      ]
-    },
-    "@nestjs/common@10.4.19_reflect-metadata@0.2.2_rxjs@7.8.2": {
-      "integrity": "sha512-0TZJ8H+7qtaqZt6YfZJkDRp0e+v6jjo5/pevPAjUy0WYxaTy16bNNQxFPRKLMe/v1hUr2oGV9imvL2477zNt5g==",
-      "dependencies": [
-        "file-type",
-        "iterare",
-        "reflect-metadata",
-        "rxjs",
-        "tslib",
-        "uid"
-      ]
-    },
-    "@nestjs/core@10.4.18_@nestjs+common@10.4.18__reflect-metadata@0.2.2__rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2": {
-      "integrity": "sha512-+cs96rnpHIfkn9o0DLZFKuE1RZ3FFQkpkzz+DY2U8C3Wn3VX5fQaO4YuabweLIhUKTLr9DMxPycA5qk5rAPFBw==",
-      "dependencies": [
-        "@nestjs/common@10.4.18_reflect-metadata@0.2.2_rxjs@7.8.2",
-        "@nuxtjs/opencollective",
-        "fast-safe-stringify",
-        "iterare",
-        "path-to-regexp@3.3.0",
+        "load-esm",
         "reflect-metadata",
         "rxjs",
         "tslib",
         "uid"
       ],
-      "scripts": true
+      "optionalPeers": [
+        "class-validator"
+      ]
     },
-    "@nestjs/core@10.4.18_@nestjs+common@10.4.18__reflect-metadata@0.2.2__rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2": {
+    "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1": {
+      "integrity": "sha512-ogEK+GriWodIwCw6buQ1rpcH4Kx+G7YQ9EwuPySI3rS05pSdtQ++UhucjusSI9apNidv+QURBztJkRecwwJQXg==",
+      "dependencies": [
+        "class-transformer",
+        "class-validator",
+        "file-type",
+        "iterare",
+        "load-esm",
+        "reflect-metadata",
+        "rxjs",
+        "tslib",
+        "uid"
+      ],
+      "optionalPeers": [
+        "class-transformer",
+        "class-validator"
+      ]
+    },
+    "@nestjs/config@4.0.2_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_rxjs@7.8.2_class-validator@0.14.2": {
+      "integrity": "sha512-McMW6EXtpc8+CwTUwFdg6h7dYcBUpH5iUILCclAsa+MbCEvC9ZKu4dCHRlJqALuhjLw97pbQu62l4+wRwGeZqA==",
+      "dependencies": [
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "dotenv",
+        "dotenv-expand",
+        "lodash",
+        "rxjs"
+      ]
+    },
+    "@nestjs/config@4.0.2_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_rxjs@7.8.2_class-validator@0.14.2_class-transformer@0.5.1": {
+      "integrity": "sha512-McMW6EXtpc8+CwTUwFdg6h7dYcBUpH5iUILCclAsa+MbCEvC9ZKu4dCHRlJqALuhjLw97pbQu62l4+wRwGeZqA==",
+      "dependencies": [
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1",
+        "dotenv",
+        "dotenv-expand",
+        "lodash",
+        "rxjs"
+      ]
+    },
+    "@nestjs/core@10.4.18_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2": {
       "integrity": "sha512-+cs96rnpHIfkn9o0DLZFKuE1RZ3FFQkpkzz+DY2U8C3Wn3VX5fQaO4YuabweLIhUKTLr9DMxPycA5qk5rAPFBw==",
       "dependencies": [
-        "@nestjs/common@10.4.19_reflect-metadata@0.2.2_rxjs@7.8.2",
-        "@nestjs/platform-express@10.4.19_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.18___reflect-metadata@0.2.2___rxjs@7.8.2__reflect-metadata@0.2.2__rxjs@7.8.2__@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2",
         "@nuxtjs/opencollective",
         "fast-safe-stringify",
         "iterare",
@@ -83,15 +104,34 @@
         "uid"
       ],
       "optionalPeers": [
-        "@nestjs/platform-express@10.4.19_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.18___reflect-metadata@0.2.2___rxjs@7.8.2__reflect-metadata@0.2.2__rxjs@7.8.2__@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2"
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2"
       ],
       "scripts": true
     },
-    "@nestjs/core@10.4.19_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@10.4.18____reflect-metadata@0.2.2____rxjs@7.8.2___reflect-metadata@0.2.2___rxjs@7.8.2___@nestjs+platform-express@10.4.19___@nestjs+common@10.4.19____reflect-metadata@0.2.2____rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.18___reflect-metadata@0.2.2___rxjs@7.8.2__reflect-metadata@0.2.2__rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@10.4.19____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2": {
+    "@nestjs/core@10.4.18_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2_class-transformer@0.5.1": {
+      "integrity": "sha512-+cs96rnpHIfkn9o0DLZFKuE1RZ3FFQkpkzz+DY2U8C3Wn3VX5fQaO4YuabweLIhUKTLr9DMxPycA5qk5rAPFBw==",
+      "dependencies": [
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1",
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "@nuxtjs/opencollective",
+        "fast-safe-stringify",
+        "iterare",
+        "path-to-regexp@3.3.0",
+        "reflect-metadata",
+        "rxjs",
+        "tslib",
+        "uid"
+      ],
+      "optionalPeers": [
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1_reflect-metadata@0.2.2_rxjs@7.8.2"
+      ],
+      "scripts": true
+    },
+    "@nestjs/core@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-validator@0.14.2__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2": {
       "integrity": "sha512-gahghu0y4Rn4gn/xPjTgNHFMpUM8TxfhdeMowVWTGVnYMZtGeEGbIXMFhJS0Dce3E4VKyqAglzgO9ecAZd4Ong==",
       "dependencies": [
-        "@nestjs/common@10.4.19_reflect-metadata@0.2.2_rxjs@7.8.2",
-        "@nestjs/platform-express@10.4.19_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.18___reflect-metadata@0.2.2___rxjs@7.8.2__reflect-metadata@0.2.2__rxjs@7.8.2__@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2",
         "@nuxtjs/opencollective",
         "fast-safe-stringify",
         "iterare",
@@ -102,15 +142,34 @@
         "uid"
       ],
       "optionalPeers": [
-        "@nestjs/platform-express@10.4.19_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.18___reflect-metadata@0.2.2___rxjs@7.8.2__reflect-metadata@0.2.2__rxjs@7.8.2__@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2"
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2"
       ],
       "scripts": true
     },
-    "@nestjs/platform-express@10.4.19_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.18___reflect-metadata@0.2.2___rxjs@7.8.2__reflect-metadata@0.2.2__rxjs@7.8.2__@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2": {
+    "@nestjs/core@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-validator@0.14.2__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-transformer@0.5.1": {
+      "integrity": "sha512-gahghu0y4Rn4gn/xPjTgNHFMpUM8TxfhdeMowVWTGVnYMZtGeEGbIXMFhJS0Dce3E4VKyqAglzgO9ecAZd4Ong==",
+      "dependencies": [
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1",
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "@nuxtjs/opencollective",
+        "fast-safe-stringify",
+        "iterare",
+        "path-to-regexp@3.3.0",
+        "reflect-metadata",
+        "rxjs",
+        "tslib",
+        "uid"
+      ],
+      "optionalPeers": [
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1_reflect-metadata@0.2.2_rxjs@7.8.2"
+      ],
+      "scripts": true
+    },
+    "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2": {
       "integrity": "sha512-IeQkBZUtPeJoO4E0QqSLwkB+60KcThw8/s4gGvAwIRJ5ViuXoxnwU59eBDy84PUuVbNe4VdKjfAF9fuQOEh11Q==",
       "dependencies": [
-        "@nestjs/common@10.4.19_reflect-metadata@0.2.2_rxjs@7.8.2",
-        "@nestjs/core@10.4.18_@nestjs+common@10.4.18__reflect-metadata@0.2.2__rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2",
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "@nestjs/core@10.4.18_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2",
         "body-parser",
         "cors",
         "express",
@@ -118,16 +177,64 @@
         "tslib"
       ]
     },
-    "@nestjs/platform-express@10.4.19_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.18___reflect-metadata@0.2.2___rxjs@7.8.2__reflect-metadata@0.2.2__rxjs@7.8.2__@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2": {
+    "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1": {
       "integrity": "sha512-IeQkBZUtPeJoO4E0QqSLwkB+60KcThw8/s4gGvAwIRJ5ViuXoxnwU59eBDy84PUuVbNe4VdKjfAF9fuQOEh11Q==",
       "dependencies": [
-        "@nestjs/common@10.4.19_reflect-metadata@0.2.2_rxjs@7.8.2",
-        "@nestjs/core@10.4.18_@nestjs+common@10.4.18__reflect-metadata@0.2.2__rxjs@7.8.2_reflect-metadata@0.2.2_rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18_@nestjs+common@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2",
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1",
+        "@nestjs/core@10.4.18_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2_class-transformer@0.5.1",
         "body-parser",
         "cors",
         "express",
         "multer",
         "tslib"
+      ]
+    },
+    "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1_reflect-metadata@0.2.2_rxjs@7.8.2": {
+      "integrity": "sha512-IeQkBZUtPeJoO4E0QqSLwkB+60KcThw8/s4gGvAwIRJ5ViuXoxnwU59eBDy84PUuVbNe4VdKjfAF9fuQOEh11Q==",
+      "dependencies": [
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1",
+        "@nestjs/core@10.4.18_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2_class-transformer@0.5.1",
+        "body-parser",
+        "cors",
+        "express",
+        "multer",
+        "tslib"
+      ]
+    },
+    "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2": {
+      "integrity": "sha512-IeQkBZUtPeJoO4E0QqSLwkB+60KcThw8/s4gGvAwIRJ5ViuXoxnwU59eBDy84PUuVbNe4VdKjfAF9fuQOEh11Q==",
+      "dependencies": [
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "@nestjs/core@10.4.18_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2",
+        "body-parser",
+        "cors",
+        "express",
+        "multer",
+        "tslib"
+      ]
+    },
+    "@nestjs/testing@11.1.3_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-validator@0.14.2__class-validator@0.14.2_class-validator@0.14.2": {
+      "integrity": "sha512-CeXG6/eEqgFIkPkmU00y18Dd3DLOIDFhPItzJK1SWckKo6IhcnfoRJzGx75bmuvUMjb51j6An96S/+MJ2ty9jA==",
+      "dependencies": [
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2",
+        "@nestjs/core@10.4.18_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2",
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2",
+        "tslib"
+      ],
+      "optionalPeers": [
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2"
+      ]
+    },
+    "@nestjs/testing@11.1.3_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@11.1.3____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-validator@0.14.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1": {
+      "integrity": "sha512-CeXG6/eEqgFIkPkmU00y18Dd3DLOIDFhPItzJK1SWckKo6IhcnfoRJzGx75bmuvUMjb51j6An96S/+MJ2ty9jA==",
+      "dependencies": [
+        "@nestjs/common@11.1.3_class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1",
+        "@nestjs/core@10.4.18_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-validator@0.14.2_class-transformer@0.5.1",
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1",
+        "tslib"
+      ],
+      "optionalPeers": [
+        "@nestjs/platform-express@10.4.19_@nestjs+common@11.1.3__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@11.1.3___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-validator@0.14.2_class-validator@0.14.2_class-transformer@0.5.1"
       ]
     },
     "@nuxtjs/opencollective@0.3.2": {
@@ -195,6 +302,9 @@
     },
     "@tokenizer/token@0.3.0": {
       "integrity": "sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A=="
+    },
+    "@types/validator@13.15.1": {
+      "integrity": "sha512-9gG6ogYcoI2mCMLdcO0NYI0AYrbxIjv0MDmy/5Ywo6CpWWrqYayc+mmgxRsCgtcGJm9BSbXkMsmxGah1iGHAAQ=="
     },
     "accepts@1.3.8": {
       "integrity": "sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==",
@@ -265,6 +375,17 @@
         "supports-color"
       ]
     },
+    "class-transformer@0.5.1": {
+      "integrity": "sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw=="
+    },
+    "class-validator@0.14.2": {
+      "integrity": "sha512-3kMVRF2io8N8pY1IFIXlho9r8IPUUIfHe2hYVtiebvAzU2XeQFXTv+XI4WX+TnXmtwXMDcjngcpkiPM0O9PvLw==",
+      "dependencies": [
+        "@types/validator",
+        "libphonenumber-js",
+        "validator"
+      ]
+    },
     "color-convert@2.0.1": {
       "integrity": "sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==",
       "dependencies": [
@@ -325,6 +446,15 @@
     },
     "destroy@1.2.0": {
       "integrity": "sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg=="
+    },
+    "dotenv-expand@12.0.1": {
+      "integrity": "sha512-LaKRbou8gt0RNID/9RoI+J2rvXsBRPMV7p+ElHlPhcSARbCPDYcYG2s1TIzAfWv4YSgyY5taidWzzs31lNV3yQ==",
+      "dependencies": [
+        "dotenv"
+      ]
+    },
+    "dotenv@16.4.7": {
+      "integrity": "sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ=="
     },
     "dunder-proto@1.0.1": {
       "integrity": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==",
@@ -403,8 +533,8 @@
     "fflate@0.8.2": {
       "integrity": "sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A=="
     },
-    "file-type@20.4.1": {
-      "integrity": "sha512-hw9gNZXUfZ02Jo0uafWLaFVPter5/k2rfcrjFJJHX/77xtSDOfJuEFb6oKlFV86FLP1SuyHMW1PSk0U9M5tKkQ==",
+    "file-type@21.0.0": {
+      "integrity": "sha512-ek5xNX2YBYlXhiUXui3D/BXa3LdqPmoLJ7rqEx2bKJ7EAUEfmXgW0Das7Dc6Nr9MvqaOnIqiPV0mZk/r/UpNAg==",
       "dependencies": [
         "@tokenizer/inflate",
         "strtok3",
@@ -502,6 +632,15 @@
       "integrity": "sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==",
       "bin": true
     },
+    "libphonenumber-js@1.12.9": {
+      "integrity": "sha512-VWwAdNeJgN7jFOD+wN4qx83DTPMVPPAUyx9/TUkBXKLiNkuWWk6anV0439tgdtwaJDrEdqkvdN22iA6J4bUCZg=="
+    },
+    "load-esm@1.0.2": {
+      "integrity": "sha512-nVAvWk/jeyrWyXEAs84mpQCYccxRqgKY4OznLuJhJCa0XsPSfdOIr2zvBZEj3IHEHbX97jjscKRRV539bW0Gpw=="
+    },
+    "lodash@4.17.21": {
+      "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
+    },
     "math-intrinsics@1.1.0": {
       "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g=="
     },
@@ -584,9 +723,6 @@
     },
     "path-to-regexp@3.3.0": {
       "integrity": "sha512-qyCH421YQPS2WFDxDjftfc1ZR5WKQzVzqsp4n9M2kQhVOo/ByahFoUNJfl58kOcEGfQ//7weFTDhm+ss8Ecxgw=="
-    },
-    "peek-readable@7.0.0": {
-      "integrity": "sha512-nri2TO5JE3/mRryik9LlHFT53cgHfRK0Lt0BAZQXku/AW3E6XLt2GaY8siWi7dvW/m1z0ecn+J+bpDa9ZN3IsQ=="
     },
     "prisma@6.9.0": {
       "integrity": "sha512-resJAwMyZREC/I40LF6FZ6rZTnlrlrYrb63oW37Gq+U+9xHwbyMSPJjKtM7VZf3gTO86t/Oyz+YeSXr3CmAY1Q==",
@@ -723,11 +859,10 @@
         "safe-buffer"
       ]
     },
-    "strtok3@10.2.2": {
-      "integrity": "sha512-Xt18+h4s7Z8xyZ0tmBoRmzxcop97R4BAh+dXouUDCYn+Em+1P3qpkUfI5ueWLT8ynC5hZ+q4iPEmGG1urvQGBg==",
+    "strtok3@10.3.1": {
+      "integrity": "sha512-3JWEZM6mfix/GCJBBUrkA8p2Id2pBkyTkVCJKto55w080QBKZ+8R171fGrbiSp+yMO/u6F8/yUh7K4V9K+YCnw==",
       "dependencies": [
-        "@tokenizer/token",
-        "peek-readable"
+        "@tokenizer/token"
       ]
     },
     "supports-color@7.2.0": {
@@ -780,6 +915,9 @@
     "utils-merge@1.0.1": {
       "integrity": "sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA=="
     },
+    "validator@13.15.15": {
+      "integrity": "sha512-BgWVbCI72aIQy937xbawcs+hrVaN/CZ2UwutgaJ36hGqRrLNM+f5LUT/YPRbo8IV/ASeFzXszezV+y2+rq3l8A=="
+    },
     "vary@1.1.2": {
       "integrity": "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg=="
     },
@@ -803,19 +941,23 @@
       "jsr:@std/dotenv@~0.225.5"
     ],
     "members": {
+      "api": {
+        "dependencies": [
+          "npm:@nestjs/common@^11.1.3",
+          "npm:@nestjs/config@^4.0.2",
+          "npm:@nestjs/core@^10.4.19",
+          "npm:@nestjs/platform-express@^10.4.19",
+          "npm:@nestjs/testing@^11.1.3",
+          "npm:class-transformer@~0.5.1",
+          "npm:class-validator@~0.14.2"
+        ]
+      },
       "data": {
         "dependencies": [
           "npm:@nestjs/core@10.4.18",
           "npm:@prisma/client@6.9.0",
           "npm:@prisma/engines@6.9.0",
           "npm:prisma@6.9.0"
-        ]
-      },
-      "serve": {
-        "dependencies": [
-          "npm:@nestjs/common@^10.4.19",
-          "npm:@nestjs/core@^10.4.19",
-          "npm:@nestjs/platform-express@^10.4.19"
         ]
       }
     }

@@ -15,28 +15,23 @@ const prisma = new PrismaClient({
 // Sample data for producers
 const producerData: Prisma.ProducerCreateInput[] = [
   {
-    document: "123.456.789-00",
-    documentType: "CPF",
+    cpfCnpj: "123.456.789-00",
     name: "João Silva",
   },
   {
-    document: "987.654.321-00",
-    documentType: "CPF",
+    cpfCnpj: "987.654.321-00",
     name: "Maria Santos",
   },
   {
-    document: "12.345.678/0001-90",
-    documentType: "CNPJ",
+    cpfCnpj: "12.345.678/0001-90",
     name: "Fazenda São João Ltda",
   },
   {
-    document: "98.765.432/0001-10",
-    documentType: "CNPJ",
+    cpfCnpj: "98.765.432/0001-10",
     name: "Agropecuária Verde Ltda",
   },
   {
-    document: "111.222.333-44",
-    documentType: "CPF",
+    cpfCnpj: "111.222.333-44",
     name: "Pedro Oliveira",
   },
 ];
@@ -97,43 +92,43 @@ const farmData = [
 const cropData = [
   {
     name: "Soja",
-    harvest: "Safra 2023",
+    harvestYear: "Safra 2023",
   },
   {
     name: "Milho",
-    harvest: "Safra 2023",
+    harvestYear: "Safra 2023",
   },
   {
     name: "Café",
-    harvest: "Safra 2023",
+    harvestYear: "Safra 2023",
   },
   {
     name: "Soja",
-    harvest: "Safra 2022",
+    harvestYear: "Safra 2022",
   },
   {
     name: "Milho",
-    harvest: "Safra 2022",
+    harvestYear: "Safra 2022",
   },
   {
     name: "Café",
-    harvest: "Safra 2022",
+    harvestYear: "Safra 2022",
   },
   {
     name: "Algodão",
-    harvest: "Safra 2023",
+    harvestYear: "Safra 2023",
   },
   {
     name: "Feijão",
-    harvest: "Safra 2023",
+    harvestYear: "Safra 2023",
   },
   {
     name: "Arroz",
-    harvest: "Safra 2022",
+    harvestYear: "Safra 2022",
   },
   {
     name: "Trigo",
-    harvest: "Safra 2022",
+    harvestYear: "Safra 2022",
   },
 ];
 
@@ -151,7 +146,7 @@ async function seed() {
     });
     producers.push(createdProducer);
     console.log(
-      `Created producer: ${createdProducer.name} (${createdProducer.document})`,
+      `Created producer: ${createdProducer.name} (${createdProducer.cpfCnpj})`,
     );
   }
 
@@ -175,22 +170,46 @@ async function seed() {
     );
   }
 
-  // Create crops and associate with farms
+  // Create harvests for each farm
+  const harvests = [];
+  for (const farm of farms) {
+    // Create harvests for different years
+    const harvestYears = ["Safra 2022", "Safra 2023"];
+
+    for (const year of harvestYears) {
+      const createdHarvest = await prisma.harvest.create({
+        data: {
+          year: year,
+          farm: {
+            connect: { id: farm.id },
+          },
+        },
+      });
+      harvests.push(createdHarvest);
+      console.log(
+        `Created harvest: ${createdHarvest.year} for farm ${farm.name}`,
+      );
+    }
+  }
+
+  // Create crops and associate with harvests
   for (let i = 0; i < cropData.length; i++) {
     const crop = cropData[i];
-    const farm = farms[i % farms.length]; // Distribute crops among farms
+    const harvest = harvests.find((h) => h.year === crop.harvestYear);
 
-    const createdCrop = await prisma.crop.create({
-      data: {
-        ...crop,
-        farm: {
-          connect: { id: farm.id },
+    if (harvest) {
+      const createdCrop = await prisma.crop.create({
+        data: {
+          name: crop.name,
+          harvest: {
+            connect: { id: harvest.id },
+          },
         },
-      },
-    });
-    console.log(
-      `Created crop: ${createdCrop.name} - ${createdCrop.harvest} for farm ${farm.name}`,
-    );
+      });
+      console.log(
+        `Created crop: ${createdCrop.name} for harvest ${harvest.year}`,
+      );
+    }
   }
 
   console.log("✅ Seeding finished successfully!");
