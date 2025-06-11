@@ -13,7 +13,6 @@
     "npm:@nestjs/core@10.4.18": "10.4.18_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-transformer@0.5.1__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1_class-validator@0.14.2",
     "npm:@nestjs/core@^10.4.19": "10.4.19_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@10.4.19____class-transformer@0.5.1____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-transformer@0.5.1___class-validator@0.14.2__class-transformer@0.5.1__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1_class-validator@0.14.2_@nestjs+core@10.4.18__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@10.4.19____class-transformer@0.5.1____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-transformer@0.5.1___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-transformer@0.5.1__class-validator@0.14.2",
     "npm:@nestjs/platform-express@^10.4.19": "10.4.19_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-transformer@0.5.1__class-validator@0.14.2_class-transformer@0.5.1_class-validator@0.14.2",
-    "npm:@nestjs/testing@^10.4.19": "10.4.19_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@10.4.19____class-transformer@0.5.1____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-transformer@0.5.1___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-transformer@0.5.1__class-validator@0.14.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@10.4.19____class-transformer@0.5.1____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-transformer@0.5.1___class-validator@0.14.2__class-transformer@0.5.1__class-validator@0.14.2_class-transformer@0.5.1_class-validator@0.14.2",
     "npm:@prisma/client@6.9.0": "6.9.0_prisma@6.9.0",
     "npm:@prisma/engines@6.9.0": "6.9.0",
     "npm:@types/node@*": "22.15.15",
@@ -185,18 +184,6 @@
         "express",
         "multer",
         "tslib"
-      ]
-    },
-    "@nestjs/testing@10.4.19_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@10.4.19____class-transformer@0.5.1____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-transformer@0.5.1___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-transformer@0.5.1__class-validator@0.14.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@10.4.19____class-transformer@0.5.1____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-transformer@0.5.1___class-validator@0.14.2__class-transformer@0.5.1__class-validator@0.14.2_class-transformer@0.5.1_class-validator@0.14.2": {
-      "integrity": "sha512-YfzkjTmwEcoWqo8xr8YiTZMC4FjBEOg4uRTAPI2p6iGLWu+27tYau1CtAKFHY0uSAK3FzgtsAuYoxBSlfr9mWA==",
-      "dependencies": [
-        "@nestjs/common",
-        "@nestjs/core@10.4.18_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-transformer@0.5.1__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1_class-validator@0.14.2",
-        "@nestjs/platform-express@10.4.19_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-transformer@0.5.1__class-validator@0.14.2_class-transformer@0.5.1_class-validator@0.14.2",
-        "tslib"
-      ],
-      "optionalPeers": [
-        "@nestjs/platform-express@10.4.19_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-transformer@0.5.1__class-validator@0.14.2_class-transformer@0.5.1_class-validator@0.14.2"
       ]
     },
     "@nodelib/fs.scandir@2.1.5": {
@@ -2222,7 +2209,6 @@
           "npm:@nestjs/config@^4.0.2",
           "npm:@nestjs/core@^10.4.19",
           "npm:@nestjs/platform-express@^10.4.19",
-          "npm:@nestjs/testing@^10.4.19",
           "npm:class-transformer@~0.5.1",
           "npm:class-validator@~0.14.2"
         ]
