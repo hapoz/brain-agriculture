@@ -22,8 +22,17 @@
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
-    "@std/dotenv": "jsr:@std/dotenv@^0.225.5"
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.5",
+    "preact": "https://esm.sh/preact@10.22.0",
+    "preact/": "https://esm.sh/preact@10.22.0/",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
+    "tailwindcss": "npm:tailwindcss@3.4.1",
+    "tailwindcss/": "npm:/tailwindcss@3.4.1/",
+    "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js"
   },
-  "workspace": ["./data", "./api"],
-  "nodeModulesDir": "auto"
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "workspace": ["data", "api", "app"],
+  "nodeModulesDir": "auto",
+  "lint": { "rules": { "tags": ["recommended"] } }
 }

@@ -273,3 +273,6 @@ cypress/videos/*
 .tmp
 .deno_lsp
 generated/
+
+# Fresh build directory
+_fresh/
