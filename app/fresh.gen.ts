@@ -7,7 +7,6 @@ import * as $_app from "./routes/_app.tsx";
 import * as $api_dashboard from "./routes/api/dashboard.ts";
 import * as $api_producers from "./routes/api/producers.ts";
 import * as $farms from "./routes/farms.tsx";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $producers from "./routes/producers.tsx";
 import * as $Counter from "./islands/Counter.tsx";
@@ -23,7 +22,6 @@ const manifest = {
     "./routes/api/dashboard.ts": $api_dashboard,
     "./routes/api/producers.ts": $api_producers,
     "./routes/farms.tsx": $farms,
-    "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/producers.tsx": $producers,
   },
