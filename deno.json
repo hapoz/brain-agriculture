@@ -33,5 +33,6 @@
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "workspace": ["data", "api", "app"],
-  "nodeModulesDir": "auto"
+  "nodeModulesDir": "auto",
+  "lint": { "rules": { "tags": ["recommended"] } }
 }
