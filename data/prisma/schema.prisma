@@ -10,38 +10,45 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-enum DocumentType {
-    CPF
-    CNPJ
-}
-
 model Producer {
-    id           String       @id @default(uuid())
-    document     String       @unique
-    documentType DocumentType
-    name         String
-    farms        Farm[]
-    createdAt    DateTime     @default(now())
-    updatedAt    DateTime     @updatedAt
+    id       String @id @default(uuid())
+    cpfCnpj  String @unique
+    name     String
+    farms    Farm[]
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 model Farm {
-    id             String   @id @default(uuid())
+    id             String    @id @default(uuid())
     name           String
     city           String
     state          String
     totalArea      Float
     arableArea     Float
     vegetationArea Float
-    producer       Producer @relation(fields: [producerId], references: [id])
+    producer       Producer  @relation(fields: [producerId], references: [id], onDelete: Cascade)
     producerId     String
-    crops          Crop[]
+    harvests       Harvest[]
+    createdAt      DateTime  @default(now())
+    updatedAt      DateTime  @updatedAt
+}
+
+model Harvest {
+    id     String @id @default(uuid())
+    year   String
+    farm   Farm   @relation(fields: [farmId], references: [id], onDelete: Cascade)
+    farmId String
+    crops  Crop[]
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 model Crop {
-    id      String @id @default(uuid())
-    name    String
-    harvest String // ex: "Safra 2021"
-    farm    Farm   @relation(fields: [farmId], references: [id])
-    farmId  String
+    id        String   @id @default(uuid())
+    name      String
+    harvest   Harvest  @relation(fields: [harvestId], references: [id], onDelete: Cascade)
+    harvestId String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
