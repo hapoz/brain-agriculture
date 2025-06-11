@@ -15,8 +15,11 @@ export class ProducerService {
           farms: true,
         },
       });
-    } catch (error: Error) {
-      if (error.code === "P2002") {
+    } catch (error: unknown) {
+      if (
+        error && typeof error === "object" && "code" in error &&
+        error?.code === "P2002"
+      ) {
         throw new ConflictException("CPF/CNPJ already exists");
       }
       throw error;
