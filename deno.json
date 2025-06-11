@@ -1,6 +1,24 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "dev": "deno task --cwd api dev",
+    "start": "deno task --cwd api start",
+    "test": "deno task --cwd api test",
+    "test:watch": "deno task --cwd api test:watch",
+    "lint": "deno task --cwd api lint",
+    "fmt": "deno task --cwd api fmt",
+    "db:generate": "deno task --cwd data db:generate",
+    "db:push": "deno task --cwd data db:push",
+    "db:migrate": "deno task --cwd data db:migrate",
+    "db:seed": "deno task --cwd data db:seed",
+    "db:studio": "deno task --cwd api db:studio",
+    "db:reset": "deno task --cwd api db:reset",
+    "db:deploy": "deno task --cwd api db:deploy",
+    "build": "deno task --cwd api build",
+    "docker:build": "deno task --cwd api docker:build",
+    "docker:run": "deno task --cwd api docker:run",
+    "validate": "deno task --cwd api validate",
+    "setup": "deno task db:generate && deno task db:push && deno task db:seed",
+    "full-dev": "deno task setup && deno task dev"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
