@@ -1,5 +1,5 @@
 {
-  "name": "@brain-ag/serve",
+  "name": "@brain-ag/api",
   "version": "0.1.0",
   "tasks": {
     "dev": "deno run -A --watch mod.ts"
