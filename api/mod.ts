@@ -9,9 +9,11 @@ async function bootstrap() {
   const env = await load({ envPath: ".env" });
   const app = await NestFactory.create(AppModule);
 
-  // Enable CORS for development
+  // Enable CORS for development, using env variable
+  const corsOrigin = Deno.env.get("API_CORS_ORIGIN") ?? "http://localhost:8000";
+  console.log(corsOrigin);
   app.enableCors({
-    origin: "http://localhost:8000",
+    origin: corsOrigin,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   });

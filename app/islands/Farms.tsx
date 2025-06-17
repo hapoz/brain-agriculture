@@ -20,7 +20,7 @@ interface Crop {
   hectares: number;
 }
 
-export default function Farms() {
+export default function Farms({ apiBaseUrl }: { apiBaseUrl: string }) {
   const producers = useSignal<Producer[]>([]);
   const loading = useSignal(true);
   const error = useSignal<string | null>(null);
@@ -35,7 +35,7 @@ export default function Farms() {
     try {
       loading.value = true;
       error.value = null;
-      const data = await producerApi.getAll();
+      const data = await producerApi.getAll(apiBaseUrl);
       producers.value = data;
     } catch (err) {
       console.error("Error loading producers:", err);

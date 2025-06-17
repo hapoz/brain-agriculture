@@ -1,7 +1,3 @@
-import "@std/dotenv/load";
-
-const API_BASE_URL = Deno.env.get("API_BASE_URL") ?? "http://localhost:3000";
-
 // API interfaces (matching the backend)
 export interface ApiProducer {
   id: string;
@@ -159,11 +155,13 @@ function adaptApiDashboardStats(apiStats: any): DashboardStats {
   };
 }
 
+// Accept apiBaseUrl as a parameter for all API calls
 async function apiCall<T>(
+  apiBaseUrl: string,
   endpoint: string,
   options: RequestInit = {},
 ): Promise<T> {
-  const url = `${API_BASE_URL}${endpoint}`;
+  const url = `${apiBaseUrl}${endpoint}`;
 
   const response = await fetch(url, {
     headers: {
@@ -188,34 +186,37 @@ async function apiCall<T>(
 
 // Producer API calls
 export const producerApi = {
-  getAll: async (): Promise<Producer[]> => {
-    const apiProducers = await apiCall<ApiProducer[]>("/producer");
+  getAll: async (apiBaseUrl: string): Promise<Producer[]> => {
+    const apiProducers = await apiCall<ApiProducer[]>(apiBaseUrl, "/producer");
     return apiProducers.map(adaptApiProducer);
   },
-  getById: async (id: string): Promise<Producer> => {
-    const apiProducer = await apiCall<ApiProducer>(`/producer/${id}`);
+  getById: async (apiBaseUrl: string, id: string): Promise<Producer> => {
+    const apiProducer = await apiCall<ApiProducer>(
+      apiBaseUrl,
+      `/producer/${id}`,
+    );
     return adaptApiProducer(apiProducer);
   },
-  create: (data: CreateProducerDto) =>
-    apiCall<ApiProducer>("/producer", {
+  create: (apiBaseUrl: string, data: CreateProducerDto) =>
+    apiCall<ApiProducer>(apiBaseUrl, "/producer", {
       method: "POST",
       body: JSON.stringify(data),
     }),
-  update: (id: string, data: UpdateProducerDto) =>
-    apiCall<ApiProducer>(`/producer/${id}`, {
+  update: (apiBaseUrl: string, id: string, data: UpdateProducerDto) =>
+    apiCall<ApiProducer>(apiBaseUrl, `/producer/${id}`, {
       method: "PUT",
       body: JSON.stringify(data),
     }),
-  delete: (id: string) =>
-    apiCall<{ message: string }>(`/producer/${id}`, {
+  delete: (apiBaseUrl: string, id: string) =>
+    apiCall<{ message: string }>(apiBaseUrl, `/producer/${id}`, {
       method: "DELETE",
     }),
 };
 
 // Dashboard API calls
 export const dashboardApi = {
-  getStats: async (): Promise<DashboardStats> => {
-    const apiStats = await apiCall<any>("/dashboard");
+  getStats: async (apiBaseUrl: string): Promise<DashboardStats> => {
+    const apiStats = await apiCall<any>(apiBaseUrl, "/dashboard");
     return adaptApiDashboardStats(apiStats);
   },
 };
