@@ -1,4 +1,6 @@
-const API_BASE_URL = "http://localhost:3000";
+import "@std/dotenv/load";
+
+const API_BASE_URL = Deno.env.get("API_BASE_URL") ?? "http://localhost:3000";
 
 // API interfaces (matching the backend)
 export interface ApiProducer {
