@@ -8,7 +8,7 @@ import {
   type DashboardStats as DashboardStatsType,
 } from "../utils/api.ts";
 
-export default function Dashboard() {
+export default function Dashboard({ apiBaseUrl }: { apiBaseUrl: string }) {
   const farmData = useSignal<DashboardStatsType>({
     totalFarms: 0,
     totalHectares: 0,
@@ -27,7 +27,7 @@ export default function Dashboard() {
     try {
       loading.value = true;
       error.value = null;
-      const data = await dashboardApi.getStats();
+      const data = await dashboardApi.getStats(apiBaseUrl);
       farmData.value = data;
     } catch (err) {
       console.error("Error loading dashboard data:", err);
