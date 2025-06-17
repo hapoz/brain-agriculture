@@ -2,13 +2,12 @@ import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
 import ProducerForm from "../components/ProducerForm.tsx";
 import ProducerList from "../components/ProducerList.tsx";
-
-interface Producer {
-  id: string;
-  document: string;
-  name: string;
-  farms: Farm[];
-}
+import {
+  ApiError,
+  type CreateProducerDto,
+  type Producer,
+  producerApi,
+} from "../utils/api.ts";
 
 interface Farm {
   id: string;
@@ -31,6 +30,7 @@ interface Crop {
 export default function Producers() {
   const producers = useSignal<Producer[]>([]);
   const loading = useSignal(true);
+  const error = useSignal<string | null>(null);
   const showForm = useSignal(false);
   const editingProducer = useSignal<Producer | null>(null);
 
@@ -40,58 +40,17 @@ export default function Producers() {
 
   const loadProducers = async () => {
     try {
-      // Mock data - in a real app this would be an API call
-      const mockProducers: Producer[] = [
-        {
-          id: "1",
-          document: "123.456.789-00",
-          name: "João Silva",
-          farms: [
-            {
-              id: "1",
-              name: "Fazenda São João",
-              city: "Ribeirão Preto",
-              state: "São Paulo",
-              totalArea: 500,
-              arableArea: 400,
-              vegetationArea: 100,
-              crops: [
-                { id: "1", name: "Soja", season: "Safra 2023", hectares: 300 },
-                { id: "2", name: "Milho", season: "Safra 2023", hectares: 100 },
-              ],
-            },
-          ],
-        },
-        {
-          id: "2",
-          document: "12.345.678/0001-90",
-          name: "Maria Santos",
-          farms: [
-            {
-              id: "2",
-              name: "Fazenda Boa Vista",
-              city: "Londrina",
-              state: "Paraná",
-              totalArea: 800,
-              arableArea: 600,
-              vegetationArea: 200,
-              crops: [
-                { id: "3", name: "Café", season: "Safra 2023", hectares: 400 },
-                {
-                  id: "4",
-                  name: "Cana-de-açúcar",
-                  season: "Safra 2023",
-                  hectares: 200,
-                },
-              ],
-            },
-          ],
-        },
-      ];
-
-      producers.value = mockProducers;
-    } catch (error) {
-      console.error("Error loading producers:", error);
+      loading.value = true;
+      error.value = null;
+      const data = await producerApi.getAll();
+      producers.value = data;
+    } catch (err) {
+      console.error("Error loading producers:", err);
+      if (err instanceof ApiError) {
+        error.value = `Erro ao carregar produtores: ${err.message}`;
+      } else {
+        error.value = "Erro inesperado ao carregar produtores";
+      }
     } finally {
       loading.value = false;
     }
@@ -110,35 +69,47 @@ export default function Producers() {
   const handleDeleteProducer = async (id: string) => {
     if (confirm("Tem certeza que deseja excluir este produtor?")) {
       try {
-        // In a real app, this would be an API call
-        producers.value = producers.value.filter((p) => p.id !== id);
-      } catch (error) {
-        console.error("Error deleting producer:", error);
+        await producerApi.delete(id);
+        await loadProducers(); // Reload the list
+      } catch (err) {
+        console.error("Error deleting producer:", err);
+        if (err instanceof ApiError) {
+          alert(`Erro ao excluir produtor: ${err.message}`);
+        } else {
+          alert("Erro inesperado ao excluir produtor");
+        }
       }
     }
   };
 
-  const handleSaveProducer = async (producerData: Omit<Producer, "id">) => {
+  const handleSaveProducer = async (
+    producerData: { document: string; name: string; farms: any[] },
+  ) => {
     try {
+      // Transform component format to API format
+      const apiData: CreateProducerDto = {
+        cpfCnpj: producerData.document,
+        name: producerData.name,
+      };
+
       if (editingProducer.value) {
         // Update existing producer
-        const updatedProducers = producers.value.map((p) =>
-          p.id === editingProducer.value!.id ? { ...producerData, id: p.id } : p
-        );
-        producers.value = updatedProducers;
+        await producerApi.update(editingProducer.value.id, apiData);
       } else {
         // Add new producer
-        const newProducer: Producer = {
-          ...producerData,
-          id: Date.now().toString(),
-        };
-        producers.value = [...producers.value, newProducer];
+        await producerApi.create(apiData);
       }
 
       showForm.value = false;
       editingProducer.value = null;
-    } catch (error) {
-      console.error("Error saving producer:", error);
+      await loadProducers(); // Reload the list
+    } catch (err) {
+      console.error("Error saving producer:", err);
+      if (err instanceof ApiError) {
+        alert(`Erro ao salvar produtor: ${err.message}`);
+      } else {
+        alert("Erro inesperado ao salvar produtor");
+      }
     }
   };
 
@@ -159,6 +130,12 @@ export default function Producers() {
           Novo Produtor
         </button>
       </div>
+
+      {error.value && (
+        <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+          {error.value}
+        </div>
+      )}
 
       {loading.value
         ? (

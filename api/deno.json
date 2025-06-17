@@ -35,6 +35,7 @@
     "@nestjs/config": "npm:@nestjs/config@^4.0.2",
     "@nestjs/core": "npm:@nestjs/core@^10.4.19",
     "@nestjs/platform-express": "npm:@nestjs/platform-express@^10.4.19",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.5",
     "class-transformer": "npm:class-transformer@^0.5.1",
     "class-validator": "npm:class-validator@^0.14.2",
     "@prisma/client": "../data/generated/prisma/index.ts"
