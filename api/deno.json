@@ -38,10 +38,19 @@
     "@std/dotenv": "jsr:@std/dotenv@^0.225.5",
     "class-transformer": "npm:class-transformer@^0.5.1",
     "class-validator": "npm:class-validator@^0.14.2",
-    "@prisma/client": "../data/generated/prisma/index.ts"
+    "@prisma/client/runtime/library": "npm:@prisma/client@6.9.0/runtime/library",
+    "@prisma/client": "./generated/prisma/index.ts"
   },
   "compilerOptions": {
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
+  },
+  "deploy": {
+    "project": "814c9e40-10eb-435e-9cab-1a4aa4c2caa5",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "mod.ts"
   }
 }

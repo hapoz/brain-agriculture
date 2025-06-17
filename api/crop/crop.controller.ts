@@ -6,8 +6,6 @@ import {
   Param,
   Post,
   Put,
-  UsePipes,
-  ValidationPipe,
 } from "@nestjs/common";
 import { CropService } from "./crop.service.ts";
 import type { CreateCropDto } from "./dto/create-crop.dto.ts";
@@ -18,7 +16,6 @@ export class CropController {
   constructor(private readonly cropService: CropService) {}
 
   @Post()
-  @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
   create(@Body() data: CreateCropDto) {
     return this.cropService.create(data);
   }
@@ -34,7 +31,6 @@ export class CropController {
   }
 
   @Put(":id")
-  @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
   update(@Param("id") id: string, @Body() data: UpdateCropDto) {
     return this.cropService.update(id, data);
   }

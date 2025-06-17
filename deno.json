@@ -6,13 +6,13 @@
     "test:watch": "deno task --cwd api test:watch",
     "lint": "deno task --cwd api lint",
     "fmt": "deno task --cwd api fmt",
-    "db:generate": "deno task --cwd data db:generate",
-    "db:push": "deno task --cwd data db:push",
-    "db:migrate": "deno task --cwd data db:migrate",
-    "db:seed": "deno task --cwd data db:seed",
-    "db:studio": "deno task --cwd api db:studio",
-    "db:reset": "deno task --cwd api db:reset",
-    "db:deploy": "deno task --cwd api db:deploy",
+    "db:generate": "deno task --cwd api/prisma db:generate",
+    "db:push": "deno task --cwd api/prisma db:push",
+    "db:migrate": "deno task --cwd api/prisma db:migrate",
+    "db:seed": "deno task --cwd api/prisma db:seed",
+    "db:studio": "deno task --cwd api/prisma db:studio",
+    "db:reset": "deno task --cwd api/prisma db:reset",
+    "db:deploy": "deno task --cwd api/prisma db:deploy",
     "build": "deno task --cwd api build",
     "docker:build": "deno task --cwd api docker:build",
     "docker:run": "deno task --cwd api docker:run",
@@ -38,7 +38,6 @@
     "jsxImportSource": "preact"
   },
   "workspace": [
-    "data",
     "api",
     "app"
   ],

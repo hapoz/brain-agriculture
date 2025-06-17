@@ -5,8 +5,8 @@ import { load } from "@std/dotenv";
 import "@std/dotenv/load";
 
 async function bootstrap() {
-  // Load environment variables from the data directory
-  const env = await load({ envPath: "../data/.env" });
+  // Load environment variables from the api directory
+  const env = await load({ envPath: ".env" });
   const app = await NestFactory.create(AppModule);
 
   // Enable CORS for development

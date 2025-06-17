@@ -276,3 +276,4 @@ generated/
 
 # Fresh build directory
 _fresh/
+.vercel

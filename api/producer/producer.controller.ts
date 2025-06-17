@@ -6,8 +6,6 @@ import {
   Param,
   Post,
   Put,
-  UsePipes,
-  ValidationPipe,
 } from "@nestjs/common";
 import type { CreateProducerDto } from "./dto/create-producer.dto.ts";
 import type { UpdateProducerDto } from "./dto/update-producer.dto.ts";
@@ -18,7 +16,6 @@ export class ProducerController {
   constructor(private readonly producerService: ProducerService) {}
 
   @Post()
-  @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
   create(@Body() data: CreateProducerDto) {
     return this.producerService.create(data);
   }
@@ -34,7 +31,6 @@ export class ProducerController {
   }
 
   @Put(":id")
-  @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
   update(@Param("id") id: string, @Body() data: UpdateProducerDto) {
     return this.producerService.update(id, data);
   }

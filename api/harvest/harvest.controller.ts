@@ -6,8 +6,6 @@ import {
   Param,
   Post,
   Put,
-  UsePipes,
-  ValidationPipe,
 } from "@nestjs/common";
 import type { CreateHarvestDto } from "./dto/create-harvest.dto.ts";
 import type { UpdateHarvestDto } from "./dto/update-harvest.dto.ts";
@@ -18,7 +16,6 @@ export class HarvestController {
   constructor(private readonly harvestService: HarvestService) {}
 
   @Post()
-  @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
   create(@Body() data: CreateHarvestDto) {
     return this.harvestService.create(data);
   }
@@ -34,7 +31,6 @@ export class HarvestController {
   }
 
   @Put(":id")
-  @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
   update(@Param("id") id: string, @Body() data: UpdateHarvestDto) {
     return this.harvestService.update(id, data);
   }
