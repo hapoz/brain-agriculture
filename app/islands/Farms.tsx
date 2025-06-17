@@ -1,12 +1,6 @@
 import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
-
-interface Producer {
-  id: string;
-  document: string;
-  name: string;
-  farms: Farm[];
-}
+import { ApiError, type Producer, producerApi } from "../utils/api.ts";
 
 interface Farm {
   id: string;
@@ -29,6 +23,7 @@ interface Crop {
 export default function Farms() {
   const producers = useSignal<Producer[]>([]);
   const loading = useSignal(true);
+  const error = useSignal<string | null>(null);
   const selectedState = useSignal("");
   const selectedCrop = useSignal("");
 
@@ -38,96 +33,17 @@ export default function Farms() {
 
   const loadProducers = async () => {
     try {
-      // Mock data - in a real app this would be an API call
-      const mockProducers: Producer[] = [
-        {
-          id: "1",
-          document: "123.456.789-00",
-          name: "João Silva",
-          farms: [
-            {
-              id: "1",
-              name: "Fazenda São João",
-              city: "Ribeirão Preto",
-              state: "São Paulo",
-              totalArea: 500,
-              arableArea: 400,
-              vegetationArea: 100,
-              crops: [
-                { id: "1", name: "Soja", season: "Safra 2023", hectares: 300 },
-                { id: "2", name: "Milho", season: "Safra 2023", hectares: 100 },
-              ],
-            },
-          ],
-        },
-        {
-          id: "2",
-          document: "12.345.678/0001-90",
-          name: "Maria Santos",
-          farms: [
-            {
-              id: "2",
-              name: "Fazenda Boa Vista",
-              city: "Londrina",
-              state: "Paraná",
-              totalArea: 800,
-              arableArea: 600,
-              vegetationArea: 200,
-              crops: [
-                { id: "3", name: "Café", season: "Safra 2023", hectares: 400 },
-                {
-                  id: "4",
-                  name: "Cana-de-açúcar",
-                  season: "Safra 2023",
-                  hectares: 200,
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "3",
-          document: "987.654.321-00",
-          name: "Pedro Oliveira",
-          farms: [
-            {
-              id: "3",
-              name: "Fazenda Santa Clara",
-              city: "Cuiabá",
-              state: "Mato Grosso",
-              totalArea: 1200,
-              arableArea: 900,
-              vegetationArea: 300,
-              crops: [
-                { id: "5", name: "Soja", season: "Safra 2023", hectares: 600 },
-                { id: "6", name: "Milho", season: "Safra 2023", hectares: 300 },
-              ],
-            },
-            {
-              id: "4",
-              name: "Fazenda Nova Esperança",
-              city: "Rondonópolis",
-              state: "Mato Grosso",
-              totalArea: 600,
-              arableArea: 450,
-              vegetationArea: 150,
-              crops: [
-                {
-                  id: "7",
-                  name: "Algodão",
-                  season: "Safra 2023",
-                  hectares: 300,
-                },
-                { id: "8", name: "Soja", season: "Safra 2023", hectares: 150 },
-              ],
-            },
-          ],
-        },
-      ];
-
-      producers.value = mockProducers;
-    } catch (error) {
-      console.error("Error loading producers:", error);
+      loading.value = true;
+      error.value = null;
+      const data = await producerApi.getAll();
+      producers.value = data;
+    } catch (err) {
+      console.error("Error loading producers:", err);
+      if (err instanceof ApiError) {
+        error.value = `Erro ao carregar produtores: ${err.message}`;
+      } else {
+        error.value = "Erro inesperado ao carregar produtores";
+      }
     } finally {
       loading.value = false;
     }
@@ -204,6 +120,12 @@ export default function Farms() {
         </p>
       </div>
 
+      {error.value && (
+        <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+          {error.value}
+        </div>
+      )}
+
       {loading.value
         ? (
           <div class="flex justify-center items-center h-64">
@@ -234,6 +156,7 @@ export default function Farms() {
                     ))}
                   </select>
                 </div>
+
                 <div>
                   <label class="block text-sm font-medium text-gray-700 mb-2">
                     Cultura
@@ -250,7 +173,7 @@ export default function Farms() {
               </div>
             </div>
 
-            {/* Summary Stats */}
+            {/* Summary Cards */}
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div class="bg-white rounded-lg shadow p-6">
                 <div class="flex items-center">
@@ -260,7 +183,9 @@ export default function Farms() {
                     </div>
                   </div>
                   <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-500">Fazendas</p>
+                    <p class="text-sm font-medium text-gray-500">
+                      Fazendas
+                    </p>
                     <p class="text-2xl font-semibold text-gray-900">
                       {filteredFarms.length}
                     </p>
@@ -276,7 +201,9 @@ export default function Farms() {
                     </div>
                   </div>
                   <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-500">Área Total</p>
+                    <p class="text-sm font-medium text-gray-500">
+                      Área Total
+                    </p>
                     <p class="text-2xl font-semibold text-gray-900">
                       {formatNumber(getTotalHectares())} ha
                     </p>
@@ -288,7 +215,7 @@ export default function Farms() {
                 <div class="flex items-center">
                   <div class="flex-shrink-0">
                     <div class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
-                      <span class="text-yellow-600 text-lg">🌱</span>
+                      <span class="text-yellow-600 text-lg">🌾</span>
                     </div>
                   </div>
                   <div class="ml-4">
@@ -305,8 +232,8 @@ export default function Farms() {
               <div class="bg-white rounded-lg shadow p-6">
                 <div class="flex items-center">
                   <div class="flex-shrink-0">
-                    <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <span class="text-purple-600 text-lg">🌲</span>
+                    <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                      <span class="text-green-600 text-lg">🌳</span>
                     </div>
                   </div>
                   <div class="ml-4">
@@ -321,36 +248,43 @@ export default function Farms() {
               </div>
             </div>
 
-            {/* Farms Grid */}
-            {filteredFarms.length === 0
-              ? (
-                <div class="bg-white rounded-lg shadow p-8 text-center">
-                  <div class="text-gray-500 mb-4">
-                    <span class="text-4xl">🏠</span>
+            {/* Farms List */}
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+              <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-medium text-gray-900">
+                  Fazendas ({filteredFarms.length})
+                </h3>
+              </div>
+
+              {filteredFarms.length === 0
+                ? (
+                  <div class="p-8 text-center">
+                    <div class="text-gray-500 mb-4">
+                      <span class="text-4xl">🌾</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">
+                      Nenhuma fazenda encontrada
+                    </h3>
+                    <p class="text-gray-600">
+                      Tente ajustar os filtros para ver mais resultados.
+                    </p>
                   </div>
-                  <h3 class="text-lg font-medium text-gray-900 mb-2">
-                    Nenhuma fazenda encontrada
-                  </h3>
-                  <p class="text-gray-600">
-                    Tente ajustar os filtros ou cadastre uma nova fazenda.
-                  </p>
-                </div>
-              )
-              : (
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredFarms.map((farm) => (
-                    <div
-                      key={farm.id}
-                      class="bg-white rounded-lg shadow overflow-hidden"
-                    >
-                      <div class="p-6">
+                )
+                : (
+                  <div class="divide-y divide-gray-200">
+                    {filteredFarms.map((farm) => (
+                      <div key={farm.id} class="p-6">
                         <div class="flex justify-between items-start mb-4">
                           <div>
-                            <h3 class="text-lg font-medium text-gray-900">
+                            <h4 class="text-lg font-medium text-gray-900">
                               {farm.name}
-                            </h3>
+                            </h4>
                             <p class="text-sm text-gray-600">
                               {farm.city}, {farm.state}
+                            </p>
+                            <p class="text-sm text-gray-500">
+                              Produtor: {farm.producerName}{" "}
+                              ({farm.producerDocument})
                             </p>
                           </div>
                           <div class="text-right">
@@ -361,20 +295,10 @@ export default function Farms() {
                           </div>
                         </div>
 
-                        <div class="mb-4">
-                          <div class="text-sm text-gray-600 mb-2">Produtor</div>
-                          <div class="font-medium text-gray-900">
-                            {farm.producerName}
-                          </div>
-                          <div class="text-sm text-gray-500">
-                            {farm.producerDocument}
-                          </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                           <div>
                             <div class="text-xs text-gray-500 uppercase tracking-wider">
-                              Agricultável
+                              Área Agricultável
                             </div>
                             <div class="text-sm font-medium text-gray-900">
                               {formatNumber(farm.arableArea)} ha
@@ -382,39 +306,44 @@ export default function Farms() {
                           </div>
                           <div>
                             <div class="text-xs text-gray-500 uppercase tracking-wider">
-                              Vegetação
+                              Área de Vegetação
                             </div>
                             <div class="text-sm font-medium text-gray-900">
                               {formatNumber(farm.vegetationArea)} ha
+                            </div>
+                          </div>
+                          <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider">
+                              Culturas
+                            </div>
+                            <div class="text-sm font-medium text-gray-900">
+                              {farm.crops.length}
                             </div>
                           </div>
                         </div>
 
                         {farm.crops.length > 0 && (
                           <div>
-                            <div class="text-sm font-medium text-gray-900 mb-2">
-                              Culturas ({farm.crops.length})
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">
+                              Culturas Plantadas
                             </div>
-                            <div class="space-y-1">
+                            <div class="flex flex-wrap gap-2">
                               {farm.crops.map((crop) => (
-                                <div
+                                <span
                                   key={crop.id}
-                                  class="flex justify-between items-center text-sm"
+                                  class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"
                                 >
-                                  <span class="text-gray-700">{crop.name}</span>
-                                  <span class="text-gray-500">
-                                    {formatNumber(crop.hectares)} ha
-                                  </span>
-                                </div>
+                                  {crop.name} ({crop.season})
+                                </span>
                               ))}
                             </div>
                           </div>
                         )}
                       </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+                    ))}
+                  </div>
+                )}
+            </div>
           </div>
         )}
     </div>
