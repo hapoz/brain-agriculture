@@ -6,8 +6,6 @@ import {
   Param,
   Post,
   Put,
-  UsePipes,
-  ValidationPipe,
 } from "@nestjs/common";
 import type { CreateFarmDto } from "./dto/create-farm.dto.ts";
 import type { UpdateFarmDto } from "./dto/update-farm.dto.ts";
@@ -18,7 +16,6 @@ export class FarmController {
   constructor(private readonly farmService: FarmService) {}
 
   @Post()
-  @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
   create(@Body() data: CreateFarmDto) {
     return this.farmService.create(data);
   }
@@ -34,7 +31,6 @@ export class FarmController {
   }
 
   @Put(":id")
-  @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
   update(@Param("id") id: string, @Body() data: UpdateFarmDto) {
     return this.farmService.update(id, data);
   }

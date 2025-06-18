@@ -2,6 +2,7 @@ import Header from "../components/Header.tsx";
 import Dashboard from "../islands/Dashboard.tsx";
 
 export default function Home() {
+  const apiBaseUrl = Deno.env.get("API_BASE_URL") ?? "http://localhost:3000";
   return (
     <div class="min-h-screen bg-gray-50">
       <Header currentPage="dashboard" />
@@ -12,7 +13,7 @@ export default function Home() {
           <p class="text-gray-600">Visão geral do sistema de gestão agrícola</p>
         </div>
 
-        <Dashboard />
+        <Dashboard apiBaseUrl={apiBaseUrl} />
       </div>
     </div>
   );

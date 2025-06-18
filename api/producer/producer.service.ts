@@ -29,7 +29,15 @@ export class ProducerService {
   findAll() {
     return this.prisma.producer.findMany({
       include: {
-        farms: true,
+        farms: {
+          include: {
+            harvests: {
+              include: {
+                crops: true,
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -38,7 +46,15 @@ export class ProducerService {
     return this.prisma.producer.findUnique({
       where: { id },
       include: {
-        farms: true,
+        farms: {
+          include: {
+            harvests: {
+              include: {
+                crops: true,
+              },
+            },
+          },
+        },
       },
     });
   }

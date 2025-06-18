@@ -2,17 +2,14 @@ import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
 import DashboardStats from "../components/DashboardStats.tsx";
 import FarmChart from "../components/FarmChart.tsx";
+import {
+  ApiError,
+  dashboardApi,
+  type DashboardStats as DashboardStatsType,
+} from "../utils/api.ts";
 
-interface FarmData {
-  totalFarms: number;
-  totalHectares: number;
-  stateDistribution: { state: string; count: number }[];
-  cropDistribution: { crop: string; hectares: number }[];
-  landUseDistribution: { type: string; hectares: number }[];
-}
-
-export default function Dashboard() {
-  const farmData = useSignal<FarmData>({
+export default function Dashboard({ apiBaseUrl }: { apiBaseUrl: string }) {
+  const farmData = useSignal<DashboardStatsType>({
     totalFarms: 0,
     totalHectares: 0,
     stateDistribution: [],
@@ -20,47 +17,38 @@ export default function Dashboard() {
     landUseDistribution: [],
   });
   const loading = useSignal(true);
+  const error = useSignal<string | null>(null);
 
   useEffect(() => {
-    // Simulate loading dashboard data
-    const loadDashboardData = () => {
-      try {
-        // In a real app, this would be an API call
-        const mockData: FarmData = {
-          totalFarms: 156,
-          totalHectares: 45230,
-          stateDistribution: [
-            { state: "São Paulo", count: 45 },
-            { state: "Mato Grosso", count: 38 },
-            { state: "Paraná", count: 32 },
-            { state: "Rio Grande do Sul", count: 28 },
-            { state: "Minas Gerais", count: 13 },
-          ],
-          cropDistribution: [
-            { crop: "Soja", hectares: 18500 },
-            { crop: "Milho", hectares: 12300 },
-            { crop: "Café", hectares: 8900 },
-            { crop: "Cana-de-açúcar", hectares: 5530 },
-          ],
-          landUseDistribution: [
-            { type: "Área Agricultável", hectares: 36184 },
-            { type: "Área de Vegetação", hectares: 9046 },
-          ],
-        };
-
-        farmData.value = mockData;
-      } catch (error) {
-        console.error("Error loading dashboard data:", error);
-      } finally {
-        loading.value = false;
-      }
-    };
-
     loadDashboardData();
   }, []);
 
+  const loadDashboardData = async () => {
+    try {
+      loading.value = true;
+      error.value = null;
+      const data = await dashboardApi.getStats(apiBaseUrl);
+      farmData.value = data;
+    } catch (err) {
+      console.error("Error loading dashboard data:", err);
+      if (err instanceof ApiError) {
+        error.value = `Erro ao carregar dados do dashboard: ${err.message}`;
+      } else {
+        error.value = "Erro inesperado ao carregar dados do dashboard";
+      }
+    } finally {
+      loading.value = false;
+    }
+  };
+
   return (
     <div class="space-y-8">
+      {error.value && (
+        <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+          {error.value}
+        </div>
+      )}
+
       {loading.value
         ? (
           <div class="flex justify-center items-center h-64">

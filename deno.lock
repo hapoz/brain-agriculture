@@ -13,15 +13,13 @@
     "npm:@nestjs/core@10.4.18": "10.4.18_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18__class-transformer@0.5.1__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1_class-validator@0.14.2",
     "npm:@nestjs/core@^10.4.19": "10.4.19_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+platform-express@10.4.19__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+core@10.4.18___@nestjs+common@10.4.19____class-transformer@0.5.1____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+platform-express@10.4.19___reflect-metadata@0.2.2___rxjs@7.8.2___class-transformer@0.5.1___class-validator@0.14.2__class-transformer@0.5.1__class-validator@0.14.2_reflect-metadata@0.2.2_rxjs@7.8.2_class-transformer@0.5.1_class-validator@0.14.2_@nestjs+core@10.4.18__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19___@nestjs+common@10.4.19____class-transformer@0.5.1____class-validator@0.14.2____reflect-metadata@0.2.2____rxjs@7.8.2___@nestjs+core@10.4.18___class-transformer@0.5.1___class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2__class-transformer@0.5.1__class-validator@0.14.2",
     "npm:@nestjs/platform-express@^10.4.19": "10.4.19_@nestjs+common@10.4.19__class-transformer@0.5.1__class-validator@0.14.2__reflect-metadata@0.2.2__rxjs@7.8.2_@nestjs+core@10.4.18__@nestjs+common@10.4.19___class-transformer@0.5.1___class-validator@0.14.2___reflect-metadata@0.2.2___rxjs@7.8.2__@nestjs+platform-express@10.4.19__reflect-metadata@0.2.2__rxjs@7.8.2__class-transformer@0.5.1__class-validator@0.14.2_class-transformer@0.5.1_class-validator@0.14.2",
-    "npm:@prisma/client@6.9.0": "6.9.0_prisma@6.9.0",
-    "npm:@prisma/engines@6.9.0": "6.9.0",
+    "npm:@prisma/client@6.9.0": "6.9.0",
     "npm:@types/node@*": "22.15.15",
     "npm:autoprefixer@10.4.17": "10.4.17_postcss@8.4.35",
     "npm:class-transformer@~0.5.1": "0.5.1",
     "npm:class-validator@~0.14.2": "0.14.2",
     "npm:cssnano@6.0.3": "6.0.3_postcss@8.4.35",
     "npm:postcss@8.4.35": "8.4.35",
-    "npm:prisma@6.9.0": "6.9.0",
     "npm:tailwindcss@3.4.1": "3.4.1_postcss@8.5.4"
   },
   "jsr": {
@@ -215,51 +213,9 @@
     "@pkgjs/parseargs@0.11.0": {
       "integrity": "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg=="
     },
-    "@prisma/client@6.9.0_prisma@6.9.0": {
+    "@prisma/client@6.9.0": {
       "integrity": "sha512-Gg7j1hwy3SgF1KHrh0PZsYvAaykeR0PaxusnLXydehS96voYCGt1U5zVR31NIouYc63hWzidcrir1a7AIyCsNQ==",
-      "dependencies": [
-        "prisma"
-      ],
-      "optionalPeers": [
-        "prisma"
-      ],
       "scripts": true
-    },
-    "@prisma/config@6.9.0": {
-      "integrity": "sha512-Wcfk8/lN3WRJd5w4jmNQkUwhUw0eksaU/+BlAJwPQKW10k0h0LC9PD/6TQFmqKVbHQL0vG2z266r0S1MPzzhbA==",
-      "dependencies": [
-        "jiti@2.4.2"
-      ]
-    },
-    "@prisma/debug@6.9.0": {
-      "integrity": "sha512-bFeur/qi/Q+Mqk4JdQ3R38upSYPebv5aOyD1RKywVD+rAMLtRkmTFn28ZuTtVOnZHEdtxnNOCH+bPIeSGz1+Fg=="
-    },
-    "@prisma/engines-version@6.9.0-10.81e4af48011447c3cc503a190e86995b66d2a28e": {
-      "integrity": "sha512-Qp9gMoBHgqhKlrvumZWujmuD7q4DV/gooEyPCLtbkc13EZdSz2RsGUJ5mHb3RJgAbk+dm6XenqG7obJEhXcJ6Q=="
-    },
-    "@prisma/engines@6.9.0": {
-      "integrity": "sha512-im0X0bwDLA0244CDf8fuvnLuCQcBBdAGgr+ByvGfQY9wWl6EA+kRGwVk8ZIpG65rnlOwtaWIr/ZcEU5pNVvq9g==",
-      "dependencies": [
-        "@prisma/debug",
-        "@prisma/engines-version",
-        "@prisma/fetch-engine",
-        "@prisma/get-platform"
-      ],
-      "scripts": true
-    },
-    "@prisma/fetch-engine@6.9.0": {
-      "integrity": "sha512-PMKhJdl4fOdeE3J3NkcWZ+tf3W6rx3ht/rLU8w4SXFRcLhd5+3VcqY4Kslpdm8osca4ej3gTfB3+cSk5pGxgFg==",
-      "dependencies": [
-        "@prisma/debug",
-        "@prisma/engines-version",
-        "@prisma/get-platform"
-      ]
-    },
-    "@prisma/get-platform@6.9.0": {
-      "integrity": "sha512-/B4n+5V1LI/1JQcHp+sUpyRT1bBgZVPHbsC4lt4/19Xp4jvNIVcq5KYNtQDk5e/ukTSjo9PZVAxxy9ieFtlpTQ==",
-      "dependencies": [
-        "@prisma/debug"
-      ]
     },
     "@tokenizer/inflate@0.2.7": {
       "integrity": "sha512-MADQgmZT1eKjp06jpI2yozxaU9uVs4GzzgSL+uEq7bVcJ9V1ZXQkeGNql1fsSI0gMy1vhvNTNbUqrx+pZfJVmg==",
@@ -965,10 +921,6 @@
       "integrity": "sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==",
       "bin": true
     },
-    "jiti@2.4.2": {
-      "integrity": "sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==",
-      "bin": true
-    },
     "libphonenumber-js@1.12.9": {
       "integrity": "sha512-VWwAdNeJgN7jFOD+wN4qx83DTPMVPPAUyx9/TUkBXKLiNkuWWk6anV0439tgdtwaJDrEdqkvdN22iA6J4bUCZg=="
     },
@@ -1420,15 +1372,6 @@
         "source-map-js"
       ]
     },
-    "prisma@6.9.0": {
-      "integrity": "sha512-resJAwMyZREC/I40LF6FZ6rZTnlrlrYrb63oW37Gq+U+9xHwbyMSPJjKtM7VZf3gTO86t/Oyz+YeSXr3CmAY1Q==",
-      "dependencies": [
-        "@prisma/config",
-        "@prisma/engines"
-      ],
-      "scripts": true,
-      "bin": true
-    },
     "proxy-addr@2.0.7": {
       "integrity": "sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==",
       "dependencies": [
@@ -1691,7 +1634,7 @@
         "fast-glob",
         "glob-parent@6.0.2",
         "is-glob",
-        "jiti@1.21.7",
+        "jiti",
         "lilconfig@2.1.0",
         "micromatch",
         "normalize-path",
@@ -2127,6 +2070,7 @@
     "https://deno.land/x/fresh@1.7.3/src/build/mod.ts": "b9d1695a86746ac3a1c52f0e07e723faa2310d1dfd109b9a2eebab6727c4702b",
     "https://deno.land/x/fresh@1.7.3/src/constants.ts": "4795d194b6c6b95f0e876c0a997fbaf57f94cfe253442c5819f95410870b79b3",
     "https://deno.land/x/fresh@1.7.3/src/dev/build.ts": "9aaf84a781ee4d11d73ec549425f273fe8339812fdd8f726e1ec1ba61bdf0e9d",
+    "https://deno.land/x/fresh@1.7.3/src/dev/cli.ts": "507892e303c0fc5aef9933b2066f8e220c26a51566c5e43c3b51053757afed44",
     "https://deno.land/x/fresh@1.7.3/src/dev/deps.ts": "93af624becfb2d8497e3d7ef0cf5ef48df61495dc5951b5f922c6a129a9fb75c",
     "https://deno.land/x/fresh@1.7.3/src/dev/dev_command.ts": "3e3dcc80180faf8868d44d892ddfa8c5ad06033e4d94c0934302e157db1de63d",
     "https://deno.land/x/fresh@1.7.3/src/dev/error.ts": "21a38d240c00279662e6adde41367f1da0ae7e2836d993f818ea94aabab53e7b",
@@ -2205,25 +2149,20 @@
     "members": {
       "api": {
         "dependencies": [
+          "jsr:@std/dotenv@~0.225.5",
           "npm:@nestjs/common@^10.4.19",
           "npm:@nestjs/config@^4.0.2",
           "npm:@nestjs/core@^10.4.19",
           "npm:@nestjs/platform-express@^10.4.19",
+          "npm:@prisma/client@6.9.0",
           "npm:class-transformer@~0.5.1",
           "npm:class-validator@~0.14.2"
         ]
       },
       "app": {
         "dependencies": [
+          "jsr:@std/dotenv@~0.225.5",
           "npm:tailwindcss@3.4.1"
-        ]
-      },
-      "data": {
-        "dependencies": [
-          "npm:@nestjs/core@10.4.18",
-          "npm:@prisma/client@6.9.0",
-          "npm:@prisma/engines@6.9.0",
-          "npm:prisma@6.9.0"
         ]
       }
     }

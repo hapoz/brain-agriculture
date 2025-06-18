@@ -276,3 +276,5 @@ generated/
 
 # Fresh build directory
 _fresh/
+.vercel
+./api/api

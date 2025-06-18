@@ -6,19 +6,21 @@
     "test:watch": "deno task --cwd api test:watch",
     "lint": "deno task --cwd api lint",
     "fmt": "deno task --cwd api fmt",
-    "db:generate": "deno task --cwd data db:generate",
-    "db:push": "deno task --cwd data db:push",
-    "db:migrate": "deno task --cwd data db:migrate",
-    "db:seed": "deno task --cwd data db:seed",
-    "db:studio": "deno task --cwd api db:studio",
-    "db:reset": "deno task --cwd api db:reset",
-    "db:deploy": "deno task --cwd api db:deploy",
+    "db:generate": "deno task --cwd api/prisma db:generate",
+    "db:push": "deno task --cwd api/prisma db:push",
+    "db:migrate": "deno task --cwd api/prisma db:migrate",
+    "db:seed": "deno task --cwd api/prisma db:seed",
+    "db:studio": "deno task --cwd api/prisma db:studio",
+    "db:reset": "deno task --cwd api/prisma db:reset",
+    "db:deploy": "deno task --cwd api/prisma db:deploy",
     "build": "deno task --cwd api build",
     "docker:build": "deno task --cwd api docker:build",
     "docker:run": "deno task --cwd api docker:run",
     "validate": "deno task --cwd api validate",
     "setup": "deno task db:generate && deno task db:push && deno task db:seed",
-    "full-dev": "deno task setup && deno task dev"
+    "full-dev": "deno task setup && deno task dev",
+    "start:all": "deno task --cwd api start --allow-net --allow-env --allow-read --allow-write --allow-run --unstable & deno run -A --watch app/dev.ts",
+    "deploy:frontend": "deployctl deploy --project hapoz-brain-agriculture app/mod.ts"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
@@ -31,8 +33,28 @@
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js"
   },
-  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
-  "workspace": ["data", "api", "app"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "workspace": [
+    "api",
+    "app"
+  ],
   "nodeModulesDir": "auto",
-  "lint": { "rules": { "tags": ["recommended"] } }
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended"
+      ]
+    }
+  },
+  "deploy": {
+    "project": "ef21fc48-304f-45f2-a4c8-0eeb981cd9c8",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "app/mod.ts"
+  }
 }

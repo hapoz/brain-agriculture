@@ -2,13 +2,7 @@ import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
 import ProducerForm from "../components/ProducerForm.tsx";
 import ProducerList from "../components/ProducerList.tsx";
-
-interface Producer {
-  id: string;
-  document: string;
-  name: string;
-  farms: Farm[];
-}
+import { ApiError, type Producer, producerApi } from "../utils/api.ts";
 
 interface Farm {
   id: string;
@@ -28,9 +22,10 @@ interface Crop {
   hectares: number;
 }
 
-export default function Producers() {
+export default function Producers({ apiBaseUrl }: { apiBaseUrl: string }) {
   const producers = useSignal<Producer[]>([]);
   const loading = useSignal(true);
+  const error = useSignal<string | null>(null);
   const showForm = useSignal(false);
   const editingProducer = useSignal<Producer | null>(null);
 
@@ -40,126 +35,85 @@ export default function Producers() {
 
   const loadProducers = async () => {
     try {
-      // Mock data - in a real app this would be an API call
-      const mockProducers: Producer[] = [
-        {
-          id: "1",
-          document: "123.456.789-00",
-          name: "João Silva",
-          farms: [
-            {
-              id: "1",
-              name: "Fazenda São João",
-              city: "Ribeirão Preto",
-              state: "São Paulo",
-              totalArea: 500,
-              arableArea: 400,
-              vegetationArea: 100,
-              crops: [
-                { id: "1", name: "Soja", season: "Safra 2023", hectares: 300 },
-                { id: "2", name: "Milho", season: "Safra 2023", hectares: 100 },
-              ],
-            },
-          ],
-        },
-        {
-          id: "2",
-          document: "12.345.678/0001-90",
-          name: "Maria Santos",
-          farms: [
-            {
-              id: "2",
-              name: "Fazenda Boa Vista",
-              city: "Londrina",
-              state: "Paraná",
-              totalArea: 800,
-              arableArea: 600,
-              vegetationArea: 200,
-              crops: [
-                { id: "3", name: "Café", season: "Safra 2023", hectares: 400 },
-                {
-                  id: "4",
-                  name: "Cana-de-açúcar",
-                  season: "Safra 2023",
-                  hectares: 200,
-                },
-              ],
-            },
-          ],
-        },
-      ];
-
-      producers.value = mockProducers;
-    } catch (error) {
-      console.error("Error loading producers:", error);
+      loading.value = true;
+      error.value = null;
+      producers.value = await producerApi.getAll(apiBaseUrl);
+    } catch (err) {
+      console.error("Error loading producers:", err);
+      if (err instanceof ApiError) {
+        error.value = `Erro ao carregar produtores: ${err.message}`;
+      } else {
+        error.value = "Erro inesperado ao carregar produtores";
+      }
     } finally {
       loading.value = false;
     }
   };
 
-  const handleAddProducer = () => {
-    editingProducer.value = null;
-    showForm.value = true;
+  const handleCreate = async (producerData: Omit<Producer, "id">) => {
+    try {
+      await producerApi.create(apiBaseUrl, producerData);
+      showForm.value = false;
+      await loadProducers();
+    } catch (err) {
+      error.value = "Erro ao criar produtor";
+    }
   };
 
-  const handleEditProducer = (producer: Producer) => {
+  const handleEdit = (producer: Producer) => {
     editingProducer.value = producer;
     showForm.value = true;
   };
 
-  const handleDeleteProducer = async (id: string) => {
-    if (confirm("Tem certeza que deseja excluir este produtor?")) {
-      try {
-        // In a real app, this would be an API call
-        producers.value = producers.value.filter((p) => p.id !== id);
-      } catch (error) {
-        console.error("Error deleting producer:", error);
-      }
+  const handleUpdate = async (producerData: Producer) => {
+    try {
+      await producerApi.update(apiBaseUrl, producerData.id, producerData);
+      editingProducer.value = null;
+      showForm.value = false;
+      await loadProducers();
+    } catch (err) {
+      error.value = "Erro ao atualizar produtor";
     }
   };
 
-  const handleSaveProducer = async (producerData: Omit<Producer, "id">) => {
+  const handleDelete = async (id: string) => {
     try {
-      if (editingProducer.value) {
-        // Update existing producer
-        const updatedProducers = producers.value.map((p) =>
-          p.id === editingProducer.value!.id ? { ...producerData, id: p.id } : p
-        );
-        producers.value = updatedProducers;
-      } else {
-        // Add new producer
-        const newProducer: Producer = {
-          ...producerData,
-          id: Date.now().toString(),
-        };
-        producers.value = [...producers.value, newProducer];
-      }
-
-      showForm.value = false;
-      editingProducer.value = null;
-    } catch (error) {
-      console.error("Error saving producer:", error);
+      await producerApi.delete(apiBaseUrl, id);
+      await loadProducers();
+    } catch (err) {
+      error.value = "Erro ao excluir produtor";
     }
   };
 
   return (
-    <div class="space-y-6">
-      <div class="flex justify-between items-center mb-8">
-        <div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-2">
-            Gestão de Produtores
-          </h2>
-          <p class="text-gray-600">Cadastre e gerencie produtores rurais</p>
+    <div class="space-y-8">
+      {showForm.value
+        ? (
+          <ProducerForm
+            producer={editingProducer.value}
+            onSave={editingProducer.value ? handleUpdate : handleCreate}
+            onCancel={() => {
+              showForm.value = false;
+              editingProducer.value = null;
+            }}
+          />
+        )
+        : (
+          <button
+            class="bg-green-600 text-white px-4 py-2 rounded mb-4"
+            onClick={() => {
+              editingProducer.value = null;
+              showForm.value = true;
+            }}
+          >
+            Novo Produtor
+          </button>
+        )}
+      {error.value && (
+        <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+          {error.value}
         </div>
-        <button
-          onClick={handleAddProducer}
-          class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center"
-        >
-          <span class="mr-2">+</span>
-          Novo Produtor
-        </button>
-      </div>
-
+      )}
       {loading.value
         ? (
           <div class="flex justify-center items-center h-64">
@@ -168,24 +122,11 @@ export default function Producers() {
           </div>
         )
         : (
-          <div class="space-y-6">
-            {showForm.value && (
-              <ProducerForm
-                producer={editingProducer.value}
-                onSave={handleSaveProducer}
-                onCancel={() => {
-                  showForm.value = false;
-                  editingProducer.value = null;
-                }}
-              />
-            )}
-
-            <ProducerList
-              producers={producers.value}
-              onEdit={handleEditProducer}
-              onDelete={handleDeleteProducer}
-            />
-          </div>
+          <ProducerList
+            producers={producers.value}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
         )}
     </div>
   );
